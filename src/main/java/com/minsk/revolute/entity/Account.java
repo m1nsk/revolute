@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 @Getter
 @AllArgsConstructor
 public class Account {
-    private Long id;
+    private final Long id;
     private BigDecimal amount;
 
     public void setAmount(BigDecimal amount) {

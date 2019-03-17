@@ -2,6 +2,6 @@ package com.minsk.revolute.service;
 
 import com.minsk.revolute.dto.TransferDto;
 
-public interface RevoluteService {
+public interface Service {
     void transferMoney(TransferDto transferDto);
 }

@@ -5,9 +5,11 @@ import com.minsk.revolute.exceptions.NotEnoughMoneyException;
 import com.minsk.revolute.utils.ValidationUtils;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
-public class AccountRepositoryImpl implements AccountRespository {
+public class AccountRepositoryImpl implements AccountRepository {
 
     private Map<Long, Account> accountMap;
 
@@ -30,6 +32,16 @@ public class AccountRepositoryImpl implements AccountRespository {
                 outAccount.setAmount(outAccount.getAmount().subtract(amount));
             }
         }
+    }
+
+    @Override
+    public Set<Account> getAll() {
+        return new HashSet<>(accountMap.values());
+    }
+
+    @Override
+    public Account getById(Long id) {
+        return accountMap.get(id);
     }
 
     private class MonitorHandler {
