@@ -44,7 +44,7 @@ public class AccountRepositoryImpl implements AccountRepository {
         return accountMap.get(id);
     }
 
-    private class MonitorHandler {
+    private static class MonitorHandler {
 
         private final Account first;
         private final Account second;
