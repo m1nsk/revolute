@@ -2,7 +2,6 @@ package com.minsk.revolute.repository;
 
 import com.minsk.revolute.entity.Account;
 import com.minsk.revolute.exceptions.NotEnoughMoneyException;
-import com.minsk.revolute.exceptions.ValidationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

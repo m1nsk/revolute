@@ -1,7 +1,6 @@
 package com.minsk.revolute.repository;
 
 import com.minsk.revolute.entity.Account;
-import com.minsk.revolute.exceptions.NotEnoughMoneyException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,8 +15,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.LongStream;
-
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AccountRepositoryConcurrentTest {
 
