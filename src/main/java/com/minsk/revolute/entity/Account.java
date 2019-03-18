@@ -14,4 +14,8 @@ public class Account {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
+
+    public Account clone() {
+        return new Account(this.id, new BigDecimal(this.amount.toString()));
+    }
 }

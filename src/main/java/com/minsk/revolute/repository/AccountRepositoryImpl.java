@@ -8,13 +8,18 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class AccountRepositoryImpl implements AccountRepository {
 
-    private Map<Long, Account> accountMap;
+    private final Map<Long, Account> accountMap;
 
     public AccountRepositoryImpl(Map<Long, Account> accountMap) {
-        this.accountMap = accountMap;
+        this.accountMap = accountMap
+                .values()
+                .stream()
+                .map(Account::clone)
+                .collect(Collectors.toMap(Account::getId, item -> item));
     }
 
     @Override

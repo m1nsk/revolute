@@ -53,7 +53,7 @@ class IntegrationTest {
         map.put("amount", "1000.00");
 
         HttpResponse<String> response = Unirest.put("http://0.0.0.0:8080/transfer").fields(map).asString();
-        Assertions.assertTrue(response.getStatus() == 404);
+        Assertions.assertTrue(response.getStatus() == 400);
         assertTrue(response.getBody().contains("idOut"));
     }
 
@@ -65,7 +65,7 @@ class IntegrationTest {
         map.put("amount", "1000.00");
 
         HttpResponse<String> response = Unirest.put("http://0.0.0.0:8080/transfer").fields(map).asString();
-        Assertions.assertTrue(response.getStatus() == 404);
+        Assertions.assertTrue(response.getStatus() == 400);
         assertTrue(response.getBody().contains("idIn"));
     }
 
@@ -77,7 +77,7 @@ class IntegrationTest {
         map.put("amount", "1000.00");
 
         HttpResponse<String> response = Unirest.put("http://0.0.0.0:8080/transfer").fields(map).asString();
-        Assertions.assertTrue(response.getStatus() == 404);
+        Assertions.assertTrue(response.getStatus() == 400);
         assertTrue(response.getBody().contains("same"));
     }
 
@@ -90,7 +90,7 @@ class IntegrationTest {
 
         HttpResponse<String> response = Unirest.put("http://0.0.0.0:8080/transfer").fields(map).asString();
         System.out.println(response.getBody());
-        Assertions.assertTrue(response.getStatus() == 404);
+        Assertions.assertTrue(response.getStatus() == 400);
         assertTrue(response.getBody().contains("amount"));
     }
 
@@ -102,7 +102,7 @@ class IntegrationTest {
         map.put("amount", "-1000.00");
 
         HttpResponse<String> response = Unirest.put("http://0.0.0.0:8080/transfer").fields(map).asString();
-        Assertions.assertTrue(response.getStatus() == 404);
+        Assertions.assertTrue(response.getStatus() == 400);
         assertTrue(response.getBody().contains("greater"));
     }
 
@@ -114,7 +114,7 @@ class IntegrationTest {
         map.put("amount", "10000.00");
 
         HttpResponse<String> response = Unirest.put("http://0.0.0.0:8080/transfer").fields(map).asString();
-        Assertions.assertTrue(response.getStatus() == 404);
+        Assertions.assertTrue(response.getStatus() == 400);
     }
 
 }
